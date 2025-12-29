@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music Player UI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.player {
+    width: 320px;
+    background: linear-gradient(180deg, #ff758c, #ff7eb3);
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    color: white;
+}
+
+.album-art {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.song-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.artist {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 45%;
+    height: 100%;
+    background: white;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Buttons */
+.btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    color: #ff758c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Play Toggle */
+#play-toggle {
+    display: none;
+}
+
+.play-btn {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+}
+
+/* Default icon */
+.play-icon {
+    display: block;
+}
+.pause-icon {
+    display: none;
+}
+
+/* When ON */
+#play-toggle:checked + label .play-icon {
+    display: none;
+}
+#play-toggle:checked + label .pause-icon {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="player">
+    <div class="album-art"></div>
+
+    <div class="song-title">Dream Vibes</div>
+    <div class="artist">Unknown Artist</div>
+
+    <div class="progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="controls">
+        <div class="btn">⏮</div>
+
+        <!-- ON/OFF Toggle -->
+        <input type="checkbox" id="play-toggle">
+        <label for="play-toggle" class="btn play-btn">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon">⏸</span>
+        </label>
+
+        <div class="btn">⏭</div>
+    </div>
+</div>
+
+</body>
+</html>
